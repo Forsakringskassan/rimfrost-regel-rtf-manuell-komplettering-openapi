@@ -46,7 +46,7 @@ paths:
             schema:
               $ref: "#/components/schemas/RtfKompletteringData"
       responses:
-        "200":
+        "204":
           description: Komplettering registrerad OK
         "400":
           description: Ogiltig begäran
