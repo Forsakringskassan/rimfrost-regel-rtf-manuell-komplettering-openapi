@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: RTF Manuell komplettering API
+  version: 1.1.0
+  description: API för att hanteras komplettering av information för att utföra en manuell rätt till försäkring kontroll
+
+paths:
+  /{handlaggningId}:
+    get:
+      tags:
+        - RtfKompletteringController
+      operationId: getKomplettering
+      summary: Hämta kompletteringsdata för ärendet
+      description: Hämta aktuell yrkande-data som sökanden ska komplettera
+      parameters:
+        - $ref: "#/components/parameters/HandlaggningId"
+      responses:
+        "200":
+          description: Kompletteringsdata hämtad OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RtfKompletteringData"
+        "400":
+          description: Ogiltig begäran
+        "403":
+          description: Åtkomst nekad
+        "404":
+          description: Ärendet hittades inte
+        "500":
+          description: Internt serverfel
+        "503":
+          description: Tjänsten är inte tillgänglig
+    patch:
+      tags:
+        - RtfKompletteringController
+      operationId: patchKomplettering
+      summary: Registrera kompletterande uppgifter
+      description: Registrera sökandens kompletterande uppgifter
+      parameters:
+        - $ref: "#/components/parameters/HandlaggningId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RtfKompletteringData"
+      responses:
+        "200":
+          description: Komplettering registrerad OK
+        "400":
+          description: Ogiltig begäran
+        "403":
+          description: Åtkomst nekad
+        "404":
+          description: Ärendet hittades inte
+        "500":
+          description: Internt serverfel
+        "503":
+          description: Tjänsten är inte tillgänglig
+
+components:
+  parameters:
+    HandlaggningId:
+      name: handlaggningId
+      in: path
+      required: true
+      description: ID för handläggningsärendet
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+    RtfKompletteringData:
+      type: object
+      properties:
+        personnummer:
+          type: string
+          nullable: true
+        avsikt:
+          type: string
+          nullable: true
+      required:
+        - personnummer
+        - avsikt
