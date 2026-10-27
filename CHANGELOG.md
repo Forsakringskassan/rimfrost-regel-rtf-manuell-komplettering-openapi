@@ -1,3 +1,16 @@
+## 0.0.2 (2026-10-27)
+
+### Bug Fixes
+
+-  Replace github workflows ([9d872](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/9d8722d81b03a42) Lars Persson)  
+-  **deps**  update jackson monorepo to v2.22.3 ([49638](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/49638b410272c28) renovate[bot])  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to cbd74f1 ([6ffa8](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/6ffa81f5d376459) renovate[bot])  
+- update gradle to v9.8.1 ([51a3f](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/51a3f6dd4e38dab) renovate[bot])  
+- update gradle to v9.8.0 ([0a9ae](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/0a9ae65719537d8) renovate[bot])  
+- pin forsakringskassan/.github action to bfb01f7 ([4f4f2](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-komplettering-openapi/commit/4f4f2e7b3239e84) renovate[bot])  
 ## 0.0.1 (2026-09-17)
 
 ### Bug Fixes
