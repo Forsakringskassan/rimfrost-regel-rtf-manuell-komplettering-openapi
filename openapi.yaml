@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: RTF Manuell komplettering API
-  version: 1.1.0
+  version: 1.2.0
   description: API för att hanteras komplettering av information för att utföra en manuell rätt till försäkring kontroll
 
 paths:
@@ -80,6 +80,35 @@ components:
         avsikt:
           type: string
           nullable: true
+        folkbokforingsinfo:
+          $ref: "#/components/schemas/FolkbokforingsInfo"
+          nullable: true
       required:
         - personnummer
         - avsikt
+    FolkbokforingsInfo:
+      description: Folkbokföringsuppgifter som handläggaren kompletterar.
+      type: object
+      properties:
+        fornamn:
+          type: string
+        efternamn:
+          type: string
+        kon:
+          type: string
+        utdelningsadress:
+          type: string
+        postnummer:
+          type: string
+        postort:
+          type: string
+        careOf:
+          type: string
+          nullable: true
+      required:
+        - fornamn
+        - efternamn
+        - kon
+        - utdelningsadress
+        - postnummer
+        - postort
